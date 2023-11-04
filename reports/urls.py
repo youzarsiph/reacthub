@@ -10,9 +10,7 @@ from untitled.reports.views import ReportViewSet
 router = DefaultRouter(trailing_slash=False)
 router.register("reports", ReportViewSet, "report")
 
-sub_router = DefaultRouter()
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("reports/<int:id>/", include(sub_router.urls)),
 ]

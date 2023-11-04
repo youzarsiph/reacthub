@@ -10,9 +10,7 @@ from untitled.followers.views import FollowerViewSet
 router = DefaultRouter(trailing_slash=False)
 router.register("members", FollowerViewSet, "story")
 
-sub_router = DefaultRouter()
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("members/<int:id>/", include(sub_router.urls)),
 ]

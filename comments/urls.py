@@ -10,9 +10,6 @@ from untitled.comments.views import CommentViewSet
 router = DefaultRouter(trailing_slash=False)
 router.register("comments", CommentViewSet, "comment")
 
-sub_router = DefaultRouter()
-
 urlpatterns = [
     path("", include(router.urls)),
-    path("comments/<int:id>/", include(sub_router.urls)),
 ]

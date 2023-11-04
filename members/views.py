@@ -21,7 +21,7 @@ class MemberViewSet(OwnerMixin, ModelViewSet):
     filterset_fields = ["user", "community", "is_admin", "is_banned"]
 
 
-class GroupMembersViewSet(MemberViewSet):
+class CommunityMembersViewSet(MemberViewSet):
     """Members of a group"""
 
     def perform_create(self, serializer):

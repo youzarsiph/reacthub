@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from untitled.mixins import OwnerMixin
 from untitled.communities.models import Community
 from untitled.pages.models import Page
+from untitled.posts.models import Post
 from untitled.reports.models import Report
 from untitled.reports.serializers import ReportSerializer
 
@@ -52,6 +53,22 @@ class PageReportsViewSet(ReportViewSet):
 
         page = Page.objects.get(pk=self.kwargs["id"])
         return super().get_queryset().filter(page=page)
+
+
+class PostReportsViewSet(ReportViewSet):
+    """Reports of a post"""
+
+    def perform_create(self, serializer):
+        """Creates a post report"""
+
+        post = Post.objects.get(pk=self.kwargs["id"])
+        serializer.save(user=self.request.user, post=post)
+
+    def get_queryset(self):
+        """Filter queryset by post"""
+
+        post = Post.objects.get(pk=self.kwargs["id"])
+        return super().get_queryset().filter(post=post)
 
 
 class UserReportsViewSet(ReportViewSet):

@@ -10,9 +10,7 @@ from untitled.reactions.views import ReactionViewSet
 router = DefaultRouter(trailing_slash=False)
 router.register("reactions", ReactionViewSet, "reaction")
 
-sub_router = DefaultRouter()
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("reactions/<int:id>/", include(sub_router.urls)),
 ]

@@ -10,9 +10,7 @@ from untitled.stories.views import StoryViewSet
 router = DefaultRouter(trailing_slash=False)
 router.register("stories", StoryViewSet, "story")
 
-sub_router = DefaultRouter()
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("stories/<int:id>/", include(sub_router.urls)),
 ]
