@@ -13,5 +13,14 @@ class MemberSerializer(ModelSerializer):
         """Meta data"""
 
         model = Member
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user", "community"]
+        fields = [
+            "id",
+            "url",
+            "user",
+            "community",
+            "is_admin",
+            "is_banned",
+            "created_at",
+            "updated_at",
+        ]

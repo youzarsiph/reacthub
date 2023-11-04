@@ -13,5 +13,16 @@ class PageSerializer(ModelSerializer):
         """Meta data"""
 
         model = Page
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user"]
+        fields = [
+            "id",
+            "url",
+            "user",
+            "photo",
+            "cover",
+            "name",
+            "description",
+            "followers",
+            "created_at",
+            "updated_at",
+        ]

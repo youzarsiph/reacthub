@@ -13,5 +13,16 @@ class CommunitySerializer(ModelSerializer):
         """Meta data"""
 
         model = Community
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user"]
+        fields = [
+            "id",
+            "url",
+            "user",
+            "photo",
+            "cover",
+            "name",
+            "description",
+            "members",
+            "created_at",
+            "updated_at",
+        ]

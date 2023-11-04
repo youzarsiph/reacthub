@@ -1,4 +1,4 @@
-""" Data Models for untitled.members """
+""" Data Models for untitled.followers """
 
 
 from django.db import models
@@ -9,24 +9,24 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Member(models.Model):
-    """Community Members"""
+class Follower(models.Model):
+    """Page Followers"""
 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         help_text="User",
     )
-    community = models.ForeignKey(
-        "communities.Community",
+    page = models.ForeignKey(
+        "pages.Page",
         on_delete=models.CASCADE,
-        help_text="Community",
+        help_text="Page",
     )
     is_admin = models.BooleanField(
-        default=False, help_text="Designates if this member is an admin."
+        default=False, help_text="Designates if this follower is an admin."
     )
     is_banned = models.BooleanField(
-        default=False, help_text="Designates if this member is banned."
+        default=False, help_text="Designates if this follower is banned."
     )
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -36,7 +36,7 @@ class Member(models.Model):
 
         constraints = [
             models.UniqueConstraint(
-                fields=["user", "community"],
-                name="unique_member_user_community",
+                fields=["user", "page"],
+                name="unique_follower_user_page",
             )
         ]

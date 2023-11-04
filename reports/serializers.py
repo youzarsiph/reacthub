@@ -13,5 +13,15 @@ class ReportSerializer(ModelSerializer):
         """Meta data"""
 
         model = Report
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user", "community", "post", "page"]
+        fields = [
+            "id",
+            "url",
+            "user",
+            "community",
+            "post",
+            "page",
+            "comment",
+            "created_at",
+            "updated_at",
+        ]

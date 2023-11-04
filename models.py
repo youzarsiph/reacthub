@@ -12,13 +12,13 @@ class User(AbstractUser):
     image = models.ImageField(
         null=True,
         blank=True,
-        upload_to="images/users/",
+        upload_to="files/images/users/",
         help_text="User profile photo",
     )
     cover = models.ImageField(
         null=True,
         blank=True,
-        upload_to="images/users/covers/",
+        upload_to="files/images/users/",
         help_text="User profile cover photo",
     )
     about = models.CharField(

@@ -13,5 +13,5 @@ class ReactionSerializer(ModelSerializer):
         """Meta data"""
 
         model = Reaction
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user", "post"]
+        fields = ["id", "url", "user", "post", "value", "created_at", "updated_at"]

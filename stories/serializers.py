@@ -13,5 +13,14 @@ class StorySerializer(ModelSerializer):
         """Meta data"""
 
         model = Story
-        read_only_fields = []
-        fields = []
+        read_only_fields = ["user"]
+        fields = [
+            "id",
+            "url",
+            "user",
+            "text",
+            "image",
+            "video",
+            "created_at",
+            "updated_at",
+        ]
