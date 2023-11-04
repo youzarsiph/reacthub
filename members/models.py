@@ -23,10 +23,12 @@ class Member(models.Model):
         help_text="Community",
     )
     is_admin = models.BooleanField(
-        default=False, help_text="Designates if this member is an admin."
+        default=False,
+        help_text="Designates if this member is an admin.",
     )
     is_banned = models.BooleanField(
-        default=False, help_text="Designates if this member is banned."
+        default=False,
+        help_text="Designates if this member is banned.",
     )
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)

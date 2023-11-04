@@ -36,7 +36,10 @@ class Story(models.Model):
         help_text="video",
         upload_to="files/videos/stories/",
         validators=[
-            validators.FileExtensionValidator(["mp4"], "This file is not a video.")
+            validators.FileExtensionValidator(
+                ["mp4"],
+                "This file is not a video.",
+            ),
         ],
     )
     updated_at = models.DateTimeField(auto_now=True)

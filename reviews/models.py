@@ -47,7 +47,7 @@ class Review(models.Model):
 
         constraints = [
             models.UniqueConstraint(
-                fields=["user", "post"],
+                fields=["user", "page"],
                 name="unique_review_user_page",
             )
         ]

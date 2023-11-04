@@ -23,10 +23,12 @@ class Follower(models.Model):
         help_text="Page",
     )
     is_admin = models.BooleanField(
-        default=False, help_text="Designates if this follower is an admin."
+        default=False,
+        help_text="Designates if this follower is an admin.",
     )
     is_banned = models.BooleanField(
-        default=False, help_text="Designates if this follower is banned."
+        default=False,
+        help_text="Designates if this follower is banned.",
     )
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
