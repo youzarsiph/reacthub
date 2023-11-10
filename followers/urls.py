@@ -8,7 +8,7 @@ from untitled.followers.views import FollowerViewSet
 
 # Create your URLConf here.
 router = DefaultRouter(trailing_slash=False)
-router.register("members", FollowerViewSet, "story")
+router.register("followers", FollowerViewSet, "follower")
 
 
 urlpatterns = [

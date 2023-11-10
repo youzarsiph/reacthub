@@ -12,6 +12,8 @@ urlpatterns = [
     path("", include("untitled.communities.urls")),
     # Followers
     path("", include("untitled.followers.urls")),
+    # Friends
+    path("", include("untitled.friends.urls")),
     # Members
     path("", include("untitled.members.urls")),
     # Pages
